@@ -1,4 +1,6 @@
-import app from './src/app';
+const app = require('./src/app');
+
+const PORT = process.env.DEVELOPMENT_PORT;
 
 // Start the development server
 app.listen(PORT, () => {

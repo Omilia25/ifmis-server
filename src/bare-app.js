@@ -1,9 +1,8 @@
-// Bare bones app.js connecting to mongo DB
 require('dotenv').config();
-import express from 'express';
-import { connect } from 'mongoose';
-import cors from 'cors';
-import { json } from 'body-parser';
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const { json } = require('body-parser');
 
 const app = express();
 
@@ -12,7 +11,7 @@ app.use(cors());
 app.use(json());
 
 // MongoDB connection
-connect(process.env.MONGODB_URI, {
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -23,7 +22,7 @@ connect(process.env.MONGODB_URI, {
     console.error('MongoDB Atlas connection error:', error);
   });
 
-// Simple Hello World Route
+  // Simple Hello World Route
 app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
@@ -37,4 +36,4 @@ app.get('/test', (req, res) => {
 
 // Mount the API Routes
 
-export default app;
+module.exports = app;
