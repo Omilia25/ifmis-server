@@ -1,3 +1,4 @@
+// Bare bones app.js connecting to mongo DB
 require('dotenv').config();
 import express from 'express';
 import { connect } from 'mongoose';
@@ -22,7 +23,7 @@ connect(process.env.MONGODB_URI, {
     console.error('MongoDB Atlas connection error:', error);
   });
 
-  // Simple Hello World Route
+// Simple Hello World Route
 app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
