@@ -1,0 +1,11 @@
+{
+  "name": "alika-ifmis",
+  "version": "1.0.0",
+  "description": "server to handle the fms and m&e",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eng Kelvin Omilia",
+  "license": "ISC"
+}
