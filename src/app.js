@@ -6,6 +6,9 @@ const { json } = require('body-parser');
 
 const app = express();
 
+//Load the routes
+const aggregatorRoutes = require('./routes/aggregatorRoutes');
+
 // Middleware
 app.use(cors());
 app.use(json());
@@ -29,8 +32,8 @@ app.get('/test', (req, res) => {
   res.send('Test Route');
 });
 
-// Load Routes
-
 // Mount the API Routes
+app.use('/aggregator', aggregatorRoutes);
+
 
 module.exports = app;
