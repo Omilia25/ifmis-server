@@ -8,6 +8,9 @@ const app = express();
 
 //Load the routes
 const aggregatorRoutes = require('./routes/aggregatorRoutes');
+const farmerGroupRoutes = require('./routes/farmerGroupRoutes');
+const farmerRoutes = require('./routes/farmerRoutes');
+const trainingRoutes = require('./routes/trainingSession');
 
 // Middleware
 app.use(cors());
@@ -34,6 +37,9 @@ app.get('/test', (req, res) => {
 
 // Mount the API Routes
 app.use('/aggregator', aggregatorRoutes);
+app.use('/farmer-group', farmerGroupRoutes);
+app.use('/farmers', farmerRoutes);
+app.use('/training-sessions', trainingRoutes);
 
 
 module.exports = app;

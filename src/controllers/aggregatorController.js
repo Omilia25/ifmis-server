@@ -27,7 +27,7 @@ exports.registerAggregator = async (req, res) => {
       !commodities.every((item) => item.name && item.quantity > 0) ||
       !equipment.every((item) => item.type && item.quantity > 0)
     ) {
-      return res.status(400).json({ error: 'Please fill in all the required fields.' });
+      return res.status(400).json({ error: 'Please fill in all the required fields.....' });
     }
 
     // Create a new Aggregator instance
