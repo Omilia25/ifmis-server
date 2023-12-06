@@ -28,7 +28,7 @@ mongoose.connect(process.env.MONGODB_URI, {})
   // Simple Hello World Route
 app.get('/', (req, res) => {
   res.send('Hello, World!');
-});
+}); 
 
 // Test Route
 app.get('/test', (req, res) => {
